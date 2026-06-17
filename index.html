@@ -59,8 +59,8 @@
         <!-- Tombol Hamburger Mobile -->
         <div class="flex items-center gap-2">
           <button
-            onclick="toggleDiagnosticsModal()"
-            class="text-stone-muted hover:text-emerald transition-colors p-1.5 hidden md:block cursor-pointer"
+            onclick="toggleTokenDesignModal()"
+            class="text-stone-muted hover:text-emerald transition-colors p-1.5 cursor-pointer"
             title="Token Desain"
           >
             <svg
@@ -1127,13 +1127,13 @@
     <!-- Modal Diagnostik & Token Desain -->
     <div
       id="diagnosticsModal"
-      class="fixed inset-0 z-50 bg-cream/90 backdrop-blur-sm hidden flex items-start justify-end p-6"
+      class="fixed inset-0 z-50 bg-cream/90 backdrop-blur-sm hidden flex items-start justify-center md:justify-end p-6"
     >
       <div
-        class="border border-warm-border bg-surface max-w-lg w-full p-8 space-y-6 relative rounded-lg shadow-2xl mt-16 mr-4"
+        class="border border-warm-border bg-surface max-w-lg w-full p-8 space-y-6 relative rounded-lg shadow-2xl mt-0 md:mt-16 mr-0 md:mr-4"
       >
         <button
-          onclick="toggleDiagnosticsModal()"
+          onclick="toggleTokenDesignModal()"
           class="absolute top-4 right-4 text-stone-muted hover:text-charcoal transition-colors"
         >
           <svg
