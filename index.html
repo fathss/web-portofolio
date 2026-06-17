@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fathu Alwi Nabiil's - Portofolio Web</title>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body
+    class="min-h-screen flex flex-col justify-between selection:bg-emerald selection:text-cream overflow-x-hidden relative bg-cream text-stone"
+  >
+    <!-- Navigasi Header -->
+    <header class="header">
+      <div class="header-inner">
+        <!-- Brand -->
+        <button onclick="navigateTo('home')" class="brand hover:text-emerald">
+          F.A.N
+        </button>
+
+        <!-- Menu Navigasi Desktop -->
+        <nav class="nav-desktop">
+          <button
+            id="nav-home"
+            onclick="navigateTo('home')"
+            class="nav-link hover:text-emerald"
+          >
+            HOME
+          </button>
+          <button
+            id="nav-work"
+            onclick="navigateTo('work')"
+            class="nav-link hover:text-emerald"
+          >
+            WORK
+          </button>
+          <button
+            id="nav-about"
+            onclick="navigateTo('about')"
+            class="nav-link hover:text-emerald"
+          >
+            ABOUT
+          </button>
+          <button
+            id="nav-contact"
+            onclick="navigateTo('contact')"
+            class="nav-link hover:text-emerald"
+          >
+            CONTACT
+          </button>
+        </nav>
+
+        <!-- Tombol Hamburger Mobile -->
+        <div class="flex items-center gap-2">
+          <button
+            onclick="toggleDiagnosticsModal()"
+            class="text-stone-muted hover:text-emerald transition-colors p-1.5 hidden md:block cursor-pointer"
+            title="Token Desain"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+              />
+            </svg>
+          </button>
+          <button
+            id="mobileMenuBtn"
+            class="md:hidden p-2 text-stone-muted hover:text-emerald transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menuIcon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dropdown Mobile -->
+      <div id="mobileMenu" class="mobile-menu hidden">
+        <div class="grid grid-cols-2">
+          <button
+            onclick="
+              navigateTo('home');
+              toggleMobileMenu();
+            "
+            class="mobile-menu-btn border-b border-r border-warm-border"
+          >
+            HOME
+          </button>
+          <button
+            onclick="
+              navigateTo('work');
+              toggleMobileMenu();
+            "
+            class="mobile-menu-btn border-b border-warm-border"
+          >
+            WORK
+          </button>
+          <button
+            onclick="
+              navigateTo('about');
+              toggleMobileMenu();
+            "
+            class="mobile-menu-btn border-r border-warm-border"
+          >
+            ABOUT
+          </button>
+          <button
+            onclick="
+              navigateTo('contact');
+              toggleMobileMenu();
+            "
+            class="mobile-menu-btn"
+          >
+            CONTACT
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Kontainer Konten Dinamis Utama -->
+    <main
+      class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 md:py-20 z-10 space-y-24"
+    >
+      <!-- ================= HALAMAN 1: HOME ================= -->
+      <section id="home" class="scroll-mt-24 space-y-16">
+        <!-- Blok Hero -->
+        <div class="space-y-8 max-w-3xl pt-8 fade-in">
+          <!-- Avatar Minimalis SVG -->
+          <div
+            class="w-64 h-84 border border-warm-border rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="assets/profile.jpeg"
+              alt="Fathu Alwi Nabiil"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <p class="text-sm font-sans text-emerald tracking-widest uppercase">
+            Hi, saya Fathu Alwi Nabiil
+          </p>
+          <h1
+            class="text-5xl md:text-7xl font-bold tracking-tight text-charcoal leading-[1.1]"
+          >
+            I build, break,<br class="hidden md:inline" />
+            and <span class="text-emerald">learn.</span>
+          </h1>
+          <p
+            class="text-stone text-lg md:text-xl font-light leading-relaxed max-w-2xl font-sans"
+          >
+            Pengembang spesialis backend yang membangun sistem web berkinerja
+            tinggi serta mengeksplorasi skalabilitas melalui API, otomatisasi,
+            dan arsitektur sistem.
+          </p>
+          <div class="flex flex-wrap items-center gap-6 pt-4">
+            <button
+              onclick="navigateTo('work')"
+              class="px-6 py-3 bg-emerald-dark border border-warm-border hover:border-emerald text-white font-sans text-xs font-semibold tracking-widest uppercase rounded-lg transition-all duration-200 cursor-pointer"
+            >
+              LIHAT KARYA PILIHAN
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HALAMAN 2: WORK ================= -->
+      <section id="work" class="scroll-mt-24 space-y-12">
+        <div class="space-y-6 max-w-3xl fade-in">
+          <hr class="border-warm-border mb-12" />
+          <h2 class="text-3xl font-light text-charcoal tracking-tight">
+            Proyek & Karya
+          </h2>
+          <p class="text-stone text-lg font-light leading-relaxed font-sans">
+            Beberapa proyek yang saya kerjakan selama masa kuliah — dari
+            aplikasi web, mobile, hingga game.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+          <!-- Project Card 1: Peminjaman Ruangan -->
+          <div
+            onclick="openProjectModal('room-reservation')"
+            class="project-card group hover:border-emerald fade-in stagger-1"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/peminjaman-ruangan/user_dashboard.png"
+                  alt="Room Reservation System"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">
+                  Room Reservation System
+                </h3>
+                <p class="project-desc">
+                  Sistem manajemen peminjaman ruangan dengan fitur booking, alur
+                  approval, dan pencatatan status ruangan secara real-time.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('room-reservation');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://github.com/fathss/2026-peminjaman-ruangan-backend"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>BACKEND</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/fathss/2026-peminjaman-ruangan-frontend"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>FRONTEND</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/fathss/2026-peminjaman-ruangan-docs"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>DOCS</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://peminjaman-ruangan.up.railway.app/"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>LIVE</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 2: Markdown to DOCX Converter -->
+          <div
+            onclick="openProjectModal('md-converter')"
+            class="project-card group hover:border-emerald fade-in stagger-2"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/md-converter/main_1.png"
+                  alt="Markdown to DOCX Converter"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">
+                  Markdown to DOCX Converter
+                </h3>
+                <p class="project-desc">
+                  Web app konversi Markdown ke DOCX dengan live editor &
+                  preview. Mendukung pengaturan template dokumen seperti
+                  penomoran halaman, Table of Contents, dan pilihan layout
+                  sebelum export.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">React</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('md-converter');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://github.com/fathss/md-converter.git"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>GITHUB</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 3: Masbro Project -->
+          <div
+            onclick="openProjectModal('masbro-project')"
+            class="project-card group hover:border-emerald fade-in stagger-3"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/masbro-project/masbro.jpeg"
+                  alt="Masbro Project"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">
+                  Masbro Project
+                </h3>
+                <p class="project-desc">
+                  Game 2D platformer yang dikembangkan untuk kegiatan UKM.
+                  Berkontribusi pada sistem movement karakter dan desain level
+                  menggunakan pendekatan canvas-based level editor.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Unity</span>
+                  <span class="tech-tag">C#</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('masbro-project');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://github.com/RexCronous/MasbroProject"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>GITHUB</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://rexcronous.itch.io/project-masbro"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>ITCH.IO</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 4: TBCheck App -->
+          <div
+            onclick="openProjectModal('tb-check')"
+            class="project-card group hover:border-emerald fade-in stagger-4"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/tb-check/thumbnail.jpeg"
+                  alt="TBCheck App"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">
+                  TBCheck App
+                </h3>
+                <p class="project-desc">
+                  Aplikasi mobile untuk mendukung penanganan TBC, mencakup
+                  tracking konsumsi obat, pemantauan pasien terdaftar di
+                  fasilitas kesehatan, dan pencarian faskes terdekat berbasis
+                  lokasi.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Google Maps API</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('tb-check');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://github.com/fathss/tb-check-be"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>BACKEND</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/fathss/tb-check-mobile"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>MOBILE</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 5: QuakeAlert Web -->
+          <div
+            onclick="openProjectModal('quake-alert')"
+            class="project-card group hover:border-emerald fade-in stagger-5"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/quake-alert/screenshot1.png"
+                  alt="QuakeAlert Web"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">
+                  QuakeAlert Web
+                </h3>
+                <p class="project-desc">
+                  Dashboard web pemantauan gempa bumi real-time dengan peta
+                  titik kejadian, push notifikasi otomatis via OneSignal, dan
+                  fitur analitik historis. Menggunakan GeoJSON untuk deteksi
+                  wilayah terdampak.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">GeoJSON</span>
+                  <span class="tech-tag">OneSignal</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('quake-alert');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://github.com/fathss/quake-alert-be"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>BACKEND</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/fathss/quake-alert-fe"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>FRONTEND</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://quakealertweb-production.up.railway.app/"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>LIVE DEMO</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 6: TixDesk -->
+          <div
+            onclick="openProjectModal('tixdesk')"
+            class="project-card group hover:border-emerald fade-in stagger-6"
+          >
+            <div>
+              <div class="card-image">
+                <img
+                  src="assets/tixdesk/thumbnail_tix.jpeg"
+                  alt="TixDesk"
+                  class="card-image-img"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="project-title group-hover:text-emerald">TixDesk</h3>
+                <p class="project-desc">
+                  Produk aplikasi ticketing berbasis web dan mobile.
+                  Berkontribusi sebagai backend developer sekaligus mobile
+                  developer — fokus pada optimasi performa sistem melalui
+                  implementasi caching dan object storage untuk attachment.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">ASP.NET Core</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Railway</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="
+                  event.stopPropagation();
+                  openProjectModal('tixdesk');
+                "
+                class="btn-detail"
+              >
+                DETAIL<svg
+                  class="icon-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tixdesk.app"
+                target="_blank"
+                onclick="event.stopPropagation()"
+                class="btn-external"
+              >
+                <span>PLAY STORE</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HALAMAN 3: ABOUT ================= -->
+      <section id="about" class="scroll-mt-24 space-y-16">
+        <div class="space-y-6 max-w-3xl fade-in">
+          <hr class="border-warm-border mb-12" />
+          <h2 class="text-3xl font-light text-charcoal tracking-tight">
+            Tentang Saya
+          </h2>
+        </div>
+
+        <!-- Blok Header -->
+        <div class="space-y-6 pt-4 fade-in stagger-1">
+          <h1
+            class="text-4xl md:text-5xl font-bold tracking-tight text-charcoal leading-tight"
+          >
+            Belajar membangun sistem,<br />
+            bukan sekadar
+            <span class="text-emerald font-normal">perangkat lunak.</span>
+          </h1>
+          <div
+            class="space-y-6 text-stone font-light leading-relaxed max-w-2xl font-sans text-base"
+          >
+            <p>
+              Mahasiswa Teknik Informatika yang berfokus pada pengembangan
+              backend dan arsitektur sistem. Saya tertarik pada bagaimana sebuah
+              produk hidup, berkembang, dan tetap bisa di-maintain seiring
+              bertambahnya skala — dari desain awal hingga deployment.
+            </p>
+            <p>
+              Saya menikmati proses merancang sistem yang tidak hanya berjalan,
+              tetapi juga mudah dipelihara, didistribusikan, dan dikembangkan
+              lebih lanjut. Ke depannya, saya ingin mendedikasikan diri sebagai
+              backend developer yang mampu mengelola penuh siklus hidup aplikasi
+              — mulai dari perancangan arsitektur, deployment, hingga penerapan
+              CI/CD pipeline yang solid.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bagian Linimasa Pengalaman -->
+        <div class="space-y-12 pt-8 fade-in stagger-2">
+          <h3 class="text-2xl font-light text-charcoal tracking-tight">
+            Pengalaman Organisasi & Komunitas
+          </h3>
+
+          <div class="space-y-12 border-l border-warm-border pl-6 md:pl-8 ml-2">
+            <!-- Pekerjaan 1 -->
+            <div class="relative">
+              <div
+                class="absolute -left-[31px] md:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-cream border-2 border-emerald"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1"
+              >
+                <h3 class="text-lg font-semibold text-charcoal">
+                  UKM Gamespace
+                </h3>
+                <span
+                  class="text-xs font-sans text-emerald font-bold bg-charcoal/10 border border-warm-border px-2 py-0.5 rounded-lg"
+                  >2024 — 2025</span
+                >
+              </div>
+              <p
+                class="text-stone text-sm font-light leading-relaxed max-w-2xl font-sans"
+              >
+                Komunitas pembuatan game di lingkungan kampus. Berkontribusi
+                dalam pengembangan game 2D platformer menggunakan Unity,
+                khususnya pada sistem movement karakter dan desain level.
+              </p>
+            </div>
+
+            <!-- Pekerjaan 2 -->
+            <div class="relative space-y-3">
+              <div
+                class="absolute -left-[31px] md:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-cream border-2 border-emerald-light"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1"
+              >
+                <h3 class="text-lg font-semibold text-charcoal">
+                  EDUST Community
+                </h3>
+                <span
+                  class="text-xs font-sans text-emerald font-bold bg-charcoal/10 border border-warm-border px-2 py-0.5 rounded-lg"
+                  >2024 — 2025</span
+                >
+              </div>
+              <p
+                class="text-stone text-sm font-light leading-relaxed max-w-2xl font-sans"
+              >
+                Komunitas data science kampus. Mengikuti materi seputar data
+                fetching, data cleaning, dan data processing sebagai fondasi
+                pemahaman di bidang pengolahan data.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Keahlian Teknis -->
+        <div class="space-y-12 pt-8 fade-in stagger-3">
+          <h3 class="section-heading">Keahlian Teknis</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Bahasa Pemrograman & Framework -->
+            <div class="space-y-6">
+              <h4 class="label-muted">Languages & Frameworks</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">PYTHON</span>
+                <span class="skill-tag">JAVASCRIPT/TYPESCRIPT</span>
+                <span class="skill-tag">DART</span>
+                <span class="skill-tag">ASP.NET</span>
+                <span class="skill-tag">FASTAPI</span>
+                <span class="skill-tag">REACT</span>
+                <span class="skill-tag">REST</span>
+                <span class="skill-tag">WEBSOCKET</span>
+              </div>
+            </div>
+
+            <!-- Infrastruktur & Operasional -->
+            <div class="space-y-6">
+              <h4 class="label-muted">Infrastructure & Ops</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-tag">DOCKER</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">GIT</span>
+                <span class="skill-tag">GITHUB ACTIONS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sertifikasi -->
+        <div class="space-y-8 pt-8 fade-in stagger-4">
+          <h3 class="section-heading">Sertifikasi</h3>
+          <div class="cert-card">
+            <div class="space-y-1">
+              <p class="text-charcoal font-semibold text-sm">
+                AWS Academy Graduate
+              </p>
+              <p
+                class="text-emerald font-sans text-xs tracking-widest uppercase"
+              >
+                Cloud Foundations — Training Badge
+              </p>
+              <p class="text-stone-muted font-sans text-xs">
+                Amazon Web Services
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a
+                href="https://www.credly.com/go/BU47BtwS"
+                target="_blank"
+                class="btn-cert text-emerald"
+              >
+                <span>LIHAT BADGE</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="assets/certs/aws-cloud-foundation.png"
+                target="_blank"
+                class="btn-cert text-stone-muted"
+              >
+                <span>LIHAT SERTIFIKAT</span>
+                <svg
+                  class="icon-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a
+            href="assets/Fathu_Alwi_Nabiil_CV_Academy.docx"
+            download
+            class="btn-resume"
+          >
+            <svg
+              class="w-4 h-4 text-emerald"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              ></path>
+            </svg>
+            <span>UNDUH RESUME LENGKAP</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= HALAMAN 4: CONTACT ================= -->
+      <section id="contact" class="scroll-mt-24 py-20">
+        <div class="space-y-8 max-w-3xl fade-in">
+          <h2 class="label-accent">KONTAK</h2>
+          <p
+            class="text-3xl md:text-5xl font-light tracking-tight text-charcoal leading-tight"
+          >
+            Mari berkolaborasi atau sekadar menyapa.
+          </p>
+          <div class="space-y-4 pt-4">
+            <a href="mailto:alwifathu@gmail.com" class="contact-link group">
+              <svg
+                class="icon-contact"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <span class="contact-link-text">alwifathu@gmail.com</span>
+            </a>
+            <a
+              href="https://github.com/fathss"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link group"
+            >
+              <svg class="icon-contact" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="contact-link-text">github.com/fathss</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/fathu-alwi-nabiil"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link group"
+            >
+              <svg class="icon-contact" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+              <span class="contact-link-text"
+                >linkedin.com/in/fathu-alwi-nabiil</span
+              >
+            </a>
+            <a
+              href="https://www.instagram.com/ftuhnbl?igsh=MThubGtmMjQxbzgwbA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link group"
+            >
+              <svg class="icon-contact" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              <span class="contact-link-text">instagram.com/ftuhnbl</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Kaki Halaman (Footer) -->
+    <footer class="w-full border-t border-warm-border bg-cream/90 py-12 z-10">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <p class="text-xs font-sans text-stone-muted">
+          &copy; 2026 FATHU ALWI NABIIL.
+        </p>
+        <div
+          class="flex items-center space-x-8 text-stone-muted font-sans text-xs"
+        >
+          <a
+            href="https://github.com/fathss"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-emerald transition-colors"
+            >GITHUB</a
+          >
+          <a
+            href="https://linkedin.com/in/fathu-alwi-nabiil"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-emerald transition-colors"
+            >LINKEDIN</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Diagnostik & Token Desain -->
+    <div
+      id="diagnosticsModal"
+      class="fixed inset-0 z-50 bg-cream/90 backdrop-blur-sm hidden flex items-start justify-end p-6"
+    >
+      <div
+        class="border border-warm-border bg-surface max-w-lg w-full p-8 space-y-6 relative rounded-lg shadow-2xl mt-16 mr-4"
+      >
+        <button
+          onclick="toggleDiagnosticsModal()"
+          class="absolute top-4 right-4 text-stone-muted hover:text-charcoal transition-colors"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <div class="space-y-2">
+          <h3 class="text-2xl font-semibold text-charcoal tracking-tight">
+            Token Desain
+          </h3>
+          <p class="text-xs font-sans text-emerald">
+            SAND CREAM & FOREST GREEN
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 pt-4 border-t border-warm-border">
+          <div class="space-y-4">
+            <h4 class="label-muted">Palet Warna</h4>
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <span
+                  class="w-6 h-6 rounded border border-warm-border bg-cream"
+                ></span>
+                <span class="text-xs font-mono text-stone"
+                  >Cream (#F0EDE3)</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span
+                  class="w-6 h-6 rounded border border-warm-border bg-surface"
+                ></span>
+                <span class="text-xs font-mono text-stone"
+                  >Surface (#EDEAE0)</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span
+                  class="w-6 h-6 rounded border border-warm-border bg-emerald"
+                ></span>
+                <span class="text-xs font-mono text-stone"
+                  >Emerald (#388E3C)</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span
+                  class="w-6 h-6 rounded border border-warm-border bg-emerald-dark"
+                ></span>
+                <span class="text-xs font-mono text-stone"
+                  >Emerald Dark (#1B5E20)</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span
+                  class="w-6 h-6 rounded border border-warm-border bg-charcoal"
+                ></span>
+                <span class="text-xs font-mono text-stone"
+                  >Charcoal (#2C2C2C)</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h4 class="label-muted">Tipografi</h4>
+            <div class="space-y-2">
+              <div>
+                <p class="text-xs text-stone-muted font-sans">
+                  Headline (Inter)
+                </p>
+                <p class="text-2xl font-bold text-charcoal">Aa</p>
+              </div>
+              <div>
+                <p class="text-xs text-stone-muted font-sans">Body (Inter)</p>
+                <p class="text-base font-light text-stone">Aa</p>
+              </div>
+              <div>
+                <p class="text-xs text-stone-muted font-sans">
+                  Label Sistem (JetBrains Mono)
+                </p>
+                <p class="text-sm font-mono text-stone">Aa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Project Detail -->
+    <div
+      id="projectModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70"
+    >
+      <div
+        class="bg-surface border border-warm-border w-full max-w-2xl mx-4 rounded-lg overflow-y-auto max-h-[90vh]"
+      >
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between px-8 py-6 border-b border-warm-border"
+        >
+          <h3
+            id="modalTitle"
+            class="text-lg font-semibold text-charcoal font-sans"
+          ></h3>
+          <button
+            onclick="closeProjectModal()"
+            class="text-stone-muted hover:text-emerald transition-colors font-sans text-xs tracking-widest"
+          >
+            ✕ TUTUP
+          </button>
+        </div>
+        <!-- Gambar Carousel -->
+        <div
+          class="relative w-full max-h-[75vh] bg-charcoal/5 border-b border-warm-border overflow-hidden group"
+        >
+          <div
+            id="modalTrack"
+            class="flex transition-transform duration-300 ease-in-out"
+          ></div>
+          <button
+            onclick="prevImage()"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="nextImage()"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+          <div
+            id="modalDots"
+            class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"
+          ></div>
+        </div>
+        <!-- Konten -->
+        <div class="px-8 py-6 space-y-6">
+          <!-- Deskripsi -->
+          <div class="space-y-2">
+            <h4 class="label-accent">Deskripsi</h4>
+            <p id="modalDesc" class="body-text"></p>
+          </div>
+          <!-- Tantangan -->
+          <div class="space-y-2">
+            <h4 class="label-accent">Tantangan</h4>
+            <p id="modalChallenge" class="body-text"></p>
+          </div>
+          <!-- Solusi -->
+          <div class="space-y-2">
+            <h4 class="label-accent">Solusi</h4>
+            <p id="modalSolution" class="body-text"></p>
+          </div>
+          <!-- Yang Menarik -->
+          <div class="space-y-2">
+            <h4 class="label-accent">Yang Menarik</h4>
+            <p id="modalHighlight" class="body-text"></p>
+          </div>
+          <!-- Tech Stack -->
+          <div class="space-y-2">
+            <h4 class="label-accent">Tech Stack</h4>
+            <div id="modalStack" class="flex flex-wrap gap-2"></div>
+          </div>
+          <!-- Lampiran -->
+          <div id="modalAttachments" class="space-y-2 hidden">
+            <h4 class="label-accent">Lampiran</h4>
+            <div id="modalAttachmentsList" class="flex flex-col gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --color-cream: #F0EDE3;
+    --color-surface: #DDD8C9;
+    --color-charcoal: #2C2C2C;
+    --color-stone: #4A4A4A;
+    --color-stone-muted: #7A7A7A;
+    --color-emerald: #388E3C;
+    --color-emerald-light: #4CAF50;
+    --color-emerald-dark: #1B5E20;
+    --color-warm-border: #E0DCD0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F0EDE3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E0DCD0;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #388E3C;
+}
+
+.page-transition {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@layer components {
+    .project-card {
+        @apply border border-warm-border bg-surface transition-all duration-500 flex flex-col justify-between rounded-lg overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-lg;
+    }
+    .card-body {
+        @apply p-8 space-y-4;
+    }
+    .card-actions {
+        @apply p-8 pt-0 flex flex-wrap gap-2;
+    }
+    .project-title {
+        @apply text-xl font-semibold text-charcoal transition-colors;
+    }
+    .project-desc {
+        @apply text-stone text-sm leading-relaxed font-light font-sans;
+    }
+    .tech-tag {
+        @apply px-2 py-1 bg-charcoal/[0.03] border border-warm-border text-[10px] font-mono text-charcoal rounded-lg;
+    }
+    .skill-tag {
+        @apply px-3 py-1.5 bg-charcoal/[0.03] border border-warm-border text-xs font-mono text-charcoal rounded-lg;
+    }
+    .btn-detail {
+        @apply px-4 py-2 bg-surface border border-warm-border text-[11px] font-sans tracking-wider transition-all rounded-lg text-emerald cursor-pointer inline-flex items-center gap-1.5 hover:border-emerald;
+    }
+    .btn-external {
+        @apply px-4 py-2 border border-warm-border bg-charcoal/[0.03] text-[11px] font-sans tracking-wider text-charcoal transition-all flex items-center space-x-2 rounded-lg hover:border-emerald;
+    }
+    .label-accent {
+        @apply text-xs font-sans text-emerald tracking-widest uppercase;
+    }
+    .card-image {
+        @apply h-48 border-b border-warm-border bg-charcoal/5 flex items-center justify-center overflow-hidden relative;
+    }
+    .card-image-img {
+        @apply w-full h-full object-cover object-center;
+    }
+    .header {
+        @apply sticky top-0 z-50 w-full border-b border-warm-border bg-cream relative;
+    }
+    .header-inner {
+        @apply max-w-6xl mx-auto px-6 h-16 flex items-center justify-between;
+    }
+    .brand {
+        @apply font-sans text-lg font-bold tracking-wider text-charcoal transition-colors;
+    }
+    .nav-desktop {
+        @apply hidden md:flex items-center space-x-12 absolute left-1/2 -translate-x-1/2;
+    }
+    .nav-link {
+        @apply font-sans text-xs tracking-widest text-stone-muted hover:text-emerald transition-colors duration-200;
+    }
+    .mobile-menu-btn {
+        @apply font-sans text-xs tracking-widest text-stone-muted hover:text-emerald hover:bg-surface transition-colors px-8 py-4;
+    }
+    .mobile-menu {
+        @apply absolute top-16 right-0 bg-cream border border-warm-border z-40 shadow-lg;
+    }
+    .icon-sm {
+        @apply w-3 h-3;
+    }
+    .icon-chevron {
+        @apply w-3.5 h-3.5;
+    }
+    .icon-contact {
+        @apply w-4 h-4 text-stone-muted group-hover:text-emerald-light transition-colors;
+    }
+    .section-heading {
+        @apply text-2xl font-light text-charcoal tracking-tight;
+    }
+    .cert-card {
+        @apply border border-warm-border bg-surface rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+    }
+    .btn-cert {
+        @apply px-4 py-2 bg-charcoal/[0.03] border border-warm-border text-[11px] font-sans tracking-wider text-charcoal transition-all flex items-center space-x-2 rounded-lg hover:border-emerald;
+    }
+    .btn-resume {
+        @apply px-6 py-3 bg-charcoal/[0.03] border border-warm-border text-xs font-sans tracking-wider transition-all inline-flex items-center space-x-3 rounded-lg text-charcoal hover:border-emerald;
+    }
+    .tech-tags {
+        @apply flex flex-wrap gap-2 pt-2;
+    }
+    .body-text {
+        @apply text-stone text-sm font-light leading-relaxed font-sans;
+    }
+    .label-muted {
+        @apply text-xs font-sans text-stone-muted uppercase tracking-widest font-bold;
+    }
+    .contact-link {
+        @apply flex items-center space-x-4 w-fit;
+    }
+    .contact-link-text {
+        @apply font-sans text-stone-muted group-hover:text-charcoal transition-colors border-b border-transparent group-hover:border-emerald pb-0.5;
+    }
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
